@@ -1,0 +1,121 @@
+<div class="card">
+    <div class="card-header">
+        <b>Mis datos personales</b>
+    </div>
+</div>
+<div class="card-content p-2 publicar">
+    <div class="col-12 separador">
+            <input [hidden]="true" type="file" id="foto" #fileInput
+            (change)="CodificarArchivo($event)" accept="image/*">
+            <img (click)="fileInput.click()" src="https://static.thenounproject.com/png/17241-200.png" >
+        
+
+    </div>
+    <div class="col-12 separador">
+            <table class="table striped row-border">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+                    <tr>
+                        
+                        <td>Nombres:</td>
+                        
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Nombre de usuario</td>
+                        
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <td>Contraseña:</td>
+                        
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Cédula:</td>
+                        
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Descripción:</td>
+                        
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                      
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Teléfono:</td>
+                        
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <hr  noshade="noshade" size="2" width="580%" />
+                <button type="button" class="btn btn-primary float-right" (click)="open(content)"><i class="fas fa-user-edit"></i></button>
+    </div>
+    <ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Editar Perfil</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+        <table class="table striped row-border">
+                <thead>
+
+                </thead>
+                <tbody>
+                <tr>
+                    
+                    <td>Nombres:</td>
+                    
+                    <td><input type="text" [(ngModel)]="name"></td>
+                </tr>
+                <tr>
+                    <td>Nombre de Usuario:</td>
+                    
+                    <td><input type="text" [(ngModel)]="surname"></td>
+
+                </tr>
+                <tr>
+                    <td>Contraseña:</td>
+                    
+                    <td><input type="text" [(ngModel)]="password"></td>
+                </tr>
+                
+                <tr>
+                    <td>Cédula:</td>
+                    
+                    <td><input type="text" [(ngModel)]="identification_card"></td>
+                </tr>
+                <tr>
+                    <td>Descripción:</td>
+                    
+                    <td><input type="text" [(ngModel)]="description"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                  
+                    <td><input type="text" [(ngModel)]="email"></td>
+                </tr>
+                <tr>
+                    <td>Teléfono:</td>
+                    
+                    <td><input type="text" [(ngModel)]="telephone"></td>
+                </tr>
+                </tbody>
+            </table>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click');postUser()">Guardar</button>
+  </div>
+</ng-template>
+</div>

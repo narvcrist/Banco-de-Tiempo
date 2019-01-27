@@ -1,0 +1,84 @@
+<div class="col-sm-4 right" >
+  <div class="alert alert-success alert-dismissable"  *ngIf="mensaje">
+      <a class="close" (click)="closeAlert()">
+          &times;
+      </a>
+      {{mensaje}}
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+      <b>Publicar oferta</b>
+  </div>
+</div>
+  <div class="card-content p-2 publicar">
+      <form>
+          <label >Categoría:</label>
+          <select data-role="select">
+              <option value="1" data-template="<span class='mif-open-book'></span> $1">Clases</option>
+              <option value="2" data-template="<span class='mif-tools'></span> $1">Mantenimiento</option>
+              <option value="3" data-template="<span class='mif-music'></span> $1">Música</option>
+              <option value="4" data-template="<span class='mif-local-service'></span> $1">Quehaceres domesticos</option>
+              <option value="5" data-template="<span class='mif-pan-tool'></span> $1">Manualidades</option>
+          </select>
+          <div class="form-group">
+              <label for="titulo">Título de oferta:</label>
+              <input type="email" id="titulo" name="titulo" [(ngModel)]="model.titulo" placeholder="Ej. Clases de física"/>
+          </div>
+          <div class="form-group">
+              <label for="descripcion">Descripción:</label>
+              <textarea data-role="textarea" id="d" name="d" [(ngModel)]="model.descripcion"></textarea>
+          </div>
+          <br>
+          <div class="col-12 text-right">
+              <input type="reset" class="button" value="Cancel">
+              <button class="button success" (click)="addOferta()">Publicar</button>
+          </div>
+      </form>
+      <div class="card-content p-2 publicar">
+          <div class="row">
+              <div class="col-sm-6" *ngFor="let oferta of ofertas; let i = index">
+                  <div class="card" >
+                      <div class="card-body">
+                          <h5 class="card-title">{{oferta.titulo}}</h5>
+                          <p class="card-text">{{oferta.descripcion}}</p>
+                          <a (click)="editarOferta(i)" class="btn btn-info fg-white" (click)="open(content)">Editar</a>
+                          <a (click)="eliminarOferta(i)" class="btn btn-warming">Eliminar</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <ng-template #content let-c="close" let-d="dismiss">
+          <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Editar oferta</h4>
+              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+              <form class="card-content p-2 publicar">
+                  <label>Categoría:</label>
+                  <select data-role="select">
+                      <option value="1" data-template="<span class='mif-open-book'></span> $1">Clases</option>
+                      <option value="2" data-template="<span class='mif-tools'></span> $1">Mantenimiento</option>
+                      <option value="3" data-template="<span class='mif-music'></span> $1">Música</option>
+                      <option value="4" data-template="<span class='mif-local-service'></span> $1">Quehaceres domesticos</option>
+                      <option value="5" data-template="<span class='mif-pan-tool'></span> $1">Manualidades</option>
+                  </select>
+                  <div class="form-group">
+                      <label for="titulo">Título de oferta:</label>
+                      <input type="email" id="titulo" name="titulo" [(ngModel)]="model2.titulo" placeholder="Ej. Clases de física"/>
+                  </div>
+                  <div class="form-group">
+                      <label for="descripcion">Descripción:</label>
+                      <textarea data-role="textarea" id="descripcion" name="descripcion" [(ngModel)]="model2.descripcion"></textarea>
+                  </div>
+                  <br>
+              </form>
+              <div class="modal-footer"> 
+                  <button type="button" class="button success" (click)='actualizarOferta()'>Guardar</button>
+              </div>
+      </ng-template>
+</div> 
+
+  

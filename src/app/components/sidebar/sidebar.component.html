@@ -1,0 +1,61 @@
+<div data-role="navview" class="side">
+    <div class="navview-pane">
+    <button class="pull-button">
+        <span class="default-icon-menu"></span>
+    </button>
+    
+    <ul class="navview-menu">
+    <li class="item-header">Perfil</li>
+    <li>
+        <a [routerLink]="['/perfil']"[routerLinkActive]="['router-link-active']">
+            <span class="icon"><span class="mif-user fg-green"></span></span>
+            <span class="caption">Cristian Narváez</span>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <span class="icon"><span class="mif-alarm fg-orange"></span></span>
+            <span class="caption">Tiempo que tienes: 5 horas</span>
+        </a>
+    </li>
+    
+    <li class="item-header">Ofertas</li>
+    <li>
+        <a [routerLink]="['/buscar-ofertas']" [routerLinkActive]="['router-link-active']">
+            <span class="icon"><span class="mif-search fg-blue"></span></span>
+            <span class="caption">Buscar ofertas</span>
+        </a>
+    </li>
+    <li>
+        <a [routerLink]="['/publicar-ofertas']"[routerLinkActive]="['router-link-active']">
+            <span class="icon"><span class="mif-add fg-blue"></span></span>
+            <span class="caption">Añadir oferta</span>
+        </a>
+    </li>
+    <li>
+        <a [routerLink]="['/mis-ofertas']" [routerLinkActive]="['router-link-active']">
+            <span class="icon"><span class="mif-files-empty fg-blue"></span></span>
+            <span class="caption">Mis ofertas</span>
+        </a>
+    </li>
+    <br>
+    <li>
+        <a [routerLink]="['/login']" (click)="logOut()">
+            <span class="icon"><span class="mif-exit fg-red"></span></span>
+            <span class="caption">Salir</span>
+        </a>
+        </li>	
+    </ul>
+    </div>
+        <div class="navview-content d-flex flex-align-center flex-justify-center h-100">
+            <div class="card-footer pie">
+                <app-footer></app-footer>
+            </div>
+            <div class="main-container">
+                <router-outlet></router-outlet>
+            </div>
+                
+    </div>
+    
+</div>
+    
