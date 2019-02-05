@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
+=======
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
+>>>>>>> 2266488999d9cfe4ce871f17985f0aaea3b10b19
 
 @Component({
   selector: 'app-login',
@@ -9,6 +12,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+<<<<<<< HEAD
+  constructor() { }
+=======
     email='';
     password='';
     resp=[];
@@ -30,6 +36,7 @@ export class LoginComponent implements OnInit {
         console.log("error");
       });
    }
+>>>>>>> 2266488999d9cfe4ce871f17985f0aaea3b10b19
 
   ngOnInit() {
   }
