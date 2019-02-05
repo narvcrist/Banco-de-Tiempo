@@ -1,4 +1,12 @@
 .publicar{
     margin: auto;
     width: 75%;
+    
+    overflow-x: hidden;
+    height: 470px;
+    overflow-y: auto;
+}
+.right{
+    float: right;
+    padding: 10px;
 }

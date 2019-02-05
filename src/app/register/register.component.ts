@@ -8,6 +8,9 @@ import { Http } from '@angular/http';
 })
 export class RegisterComponent implements OnInit {
 
+  mensaje : string = '';
+
+
   email='';
   name='';
   surname='';
@@ -34,11 +37,15 @@ export class RegisterComponent implements OnInit {
       .toPromise()
         .then(res => {
         this.resp=res.json();
+        this.mensaje = 'Datos guardados exitosamente';
       })
       .catch(e => {});
+      
    }
 
   ngOnInit() {
   }
-
+  closeAlert():void{
+    this.mensaje = '';
+  }
 }
