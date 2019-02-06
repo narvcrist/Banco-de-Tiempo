@@ -10,9 +10,7 @@ export class MisOfertasComponent implements OnInit {
 
   mensaje : string = '';
   ofertas = [
-    {'categoria':'Música','titulo': 'Clases de cocina', descripcion: 'Clases de cocina de postres'},
-    {'categoria':'Arte','titulo': 'Clases de pintura', descripcion: 'Clases de pintura como por ejemplo pintura colonial'}
-    
+    {'categoria':'Música','titulo': 'Clases de cocina', descripcion: 'Clases de cocina de postres'}
   ];
 
   model : any = {};

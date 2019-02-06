@@ -6,6 +6,12 @@
       {{mensaje}}
   </div>
 </div>
+<div class="card">
+  <div class="card-header">
+      <b>Mis publicaciones</b>
+  </div>
+</div>
+
 <div class="card-content p-2 publicar">
   <div class="row">
       <div class="col-sm-6" *ngFor="let oferta of ofertas; let i = index">
@@ -13,8 +19,8 @@
               <div class="card-body">
                   <h5 class="card-title">{{oferta.titulo}}</h5>
                   <p class="card-text">{{oferta.descripcion}}</p>
-                  <a (click)="editarOferta(i)" class="btn btn-info fg-white" (click)="open(content)">Editar</a>
-                  <a (click)="eliminarOferta(i)" class="btn btn-warming">Eliminar</a>
+                  <a (click)="editarOferta(i)" class="btn btn-warning fg-white" (click)="eliminarOferta(i)">Eliminar</a>
+                  
               </div>
           </div>
       </div>

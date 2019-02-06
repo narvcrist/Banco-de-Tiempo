@@ -7,14 +7,7 @@
       {{mensaje}}
   </div>
 </div>
-<div class="col-sm-4 right" >
-  <div class="alert alert-warning alert-dismissable"  *ngIf="mensaj">
-      <a class="close" (click)="closeAlert()">
-          &times;
-      </a>
-      {{mensaje}}
-  </div>
-</div>
+
 <div class="publicar">
   <div class="row">
     <div class="col-12" style="height: 100px;">
@@ -25,16 +18,6 @@
     <div class="col-3"></div>
     <div class="col-6 pretty-form">
       <div class="form-group">
-<<<<<<< HEAD
-        <label for="exampleInputEmail1">Nombre Completo</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          placeholder="Nombre Completo"
-          [(ngModel)]="name"
-        />
-=======
         <label for="exampleInputEmail1">Correo Electrónico</label>
           <input
             type="email"
@@ -63,19 +46,12 @@
             [(ngModel)]="surname"
           />
           </div>
->>>>>>> 2266488999d9cfe4ce871f17985f0aaea3b10b19
       <div class="form-group">
         <label for="exampleInputEmail1">Cedúla</label>
         <input
           type="number"
           maxlength=10
           class="form-control"
-<<<<<<< HEAD
-          id="cedula"
-          placeholder="Cédula"
-          [(ngModel)]="cedula"
-        />
-=======
           name="identification_card"
           placeholder="Cédula"
           [(ngModel)]="identification_card"
@@ -91,30 +67,12 @@
             [(ngModel)]="description"
           />
         </div>
->>>>>>> 2266488999d9cfe4ce871f17985f0aaea3b10b19
       <div class="form-group">
         <label for="exampleInputEmail1">Teléfono</label>
         <input
           type="number"
           maxlength=10
           class="form-control"
-<<<<<<< HEAD
-          id="telefono"
-          placeholder="Teléfono"
-          [(ngModel)]="telefono"
-        />
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Correo Electrónico</label>
-        <input
-          type="email"
-          class="form-control"
-          id="email"
-          placeholder="Correo Electrónico"
-          [(ngModel)]="email"
-        />
-      </div>
-=======
           name="telephone"
           placeholder="Teléfono"
           [(ngModel)]="telephone"
@@ -130,7 +88,6 @@
             [(ngModel)]="password"
           />
           </div>
->>>>>>> 2266488999d9cfe4ce871f17985f0aaea3b10b19
       <div class="row">
         <div class="col-12 text-right">
           <button type="button" class="button success" (click)="registrar()">

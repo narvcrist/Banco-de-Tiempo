@@ -10,7 +10,7 @@ export class PublicarOfertasComponent implements OnInit {
 
   mensaje : string = '';
   ofertas = [
-    {'categoria':'Música','titulo': 'Clases de cocina', descripcion: 'Clases de cocina de postres'}
+    
     
   ];
 
@@ -46,7 +46,6 @@ export class PublicarOfertasComponent implements OnInit {
     }
 
   }
-
   constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
