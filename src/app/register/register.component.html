@@ -1,3 +1,13 @@
+
+<div class="col-sm-4 right" >
+  <div class="alert alert-success alert-dismissable"  *ngIf="mensaje">
+      <a class="close" (click)="closeAlert()">
+          &times;
+      </a>
+      {{mensaje}}
+  </div>
+</div>
+
 <div class="publicar">
   <div class="row">
     <div class="col-12" style="height: 100px;">

@@ -2,3 +2,7 @@
     margin: auto;
     width: 75%;
 }
+.right{
+    float: right;
+    padding: 10px;
+}
