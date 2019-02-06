@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
-import { AuthService } from './../../../services/auth.service';
+import { AuthService } from './../../services/auth.service';
 import swal from 'sweetalert';
 @Component({
   selector: 'app-perfil',
