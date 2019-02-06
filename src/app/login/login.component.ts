@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
->>>>>>> 2266488999d9cfe4ce871f17985f0aaea3b10b19
+import { AuthService } from './../services/auth.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-login',
@@ -12,33 +11,36 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-=======
-    email='';
-    password='';
-    resp=[];
+  password: String = '';
+  email: String = '';
+  busy: Promise<any>;
 
-  constructor(public router: Router, private http : Http) {
-    this.login();
-   }
-   login(){
-     this.http.post('http://localhost:8000/user',{email:this.email, password:this.password})
-     .toPromise()
-        .then(res => {
-          sessionStorage.setItem('api-token', res.token);
-          sessionStorage.setItem('isLoggedin', 'true');
-          const userData = { id: res.id, name: res.name };
-          sessionStorage.setItem('user', JSON.stringify(userData));
-          this.router.navigate(['/sidebar']);
-          this.resp=res.json();
-          
-      })
-      .catch(e => {});
-   }
->>>>>>> 2266488999d9cfe4ce871f17985f0aaea3b10b19
-
+  constructor(public router: Router, public authDataServise: AuthService) {}
   ngOnInit() {
+    this.email = '';
+    this.password = '';
   }
- 
+   login() {
+    this.busy = this.authDataServise.login(this.email, this.password).then( r => {
+      if ( r["success"]===true) {
+
+      this.router.navigate(['/perfil']);
+    }else {
+        swal({
+          title: 'Email o Contraseña incorrectas',
+          text: 'La dirección de correo proporcionada o contraseña no existen',
+          icon: 'error',
+        })}}).catch( e => {
+      swal({
+        title: 'Iniciar Sesión',
+        text: 'Credenciales Incorrectos',
+        icon: 'error',
+      })
+      .then( response => {
+        sessionStorage.clear();
+        this.router.navigate(['/login']);
+      });
+    });
+  }
+  
 }
